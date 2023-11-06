@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <title>Course Page</title>
+</head>
+<body>
+    <div class="container-fluid px-0">
+        <div class="row">
+            <!-- Left Sidebar -->
+            <nav id="sidebar" class="col-lg-3 bg-success d-flex flex-column justify-content-between" style="height: 100vh;">
+                <!-- User Account -->
+                <div class="text-center p-5">
+                    <img src="img/carousel-1.jpg" class="img-fluid rounded-circle" alt="user's image">
+                    <p class="lead text-white">John Doe</p>
+                    <button class="btn btn-danger">
+                        Logout
+                    </button>
+                </div>
+                <div class="nav flex-column px-5">
+                    <p class="nav-item">
+                        <a id="dashboard-link" class="nav-link text-white" href="#" data-bs-toggle="collapse" data-bs-target="#dashboard-content">
+                            <i class="fas fa-tachometer-alt me-2"></i> Dashboard
+                        </a>
+                    </p>
+                    <p id="courses-link" class="nav-item">
+                        <a class="nav-link text-white" href="#" data-bs-toggle="collapse" data-bs-target="#courses-content">
+                            <i class="fas fa-book me-2"></i> Courses
+                        </a>
+                    </p>
+                    <p id="students-link" class="nav-item">
+                        <a class="nav-link text-white" href="#" data-bs-toggle="collapse" data-bs-target="#students-content">
+                            <i class="fas fa-graduation-cap me-2"></i> Students
+                        </a>
+                    </p>
+                    <p id="instructor-link" class="nav-item">
+                        <a class="nav-link text-white" href="#" data-bs-toggle="collapse" data-bs-target="#instructors-content">
+                            <i class="fas fa-chalkboard-teacher me-2"></i> Instructors
+                        </a>
+                    </p>
+                    <p id="settings-link" class="nav-item">
+                        <a class="nav-link text-white" href="#" data-bs-toggle="collapse" data-bs-target="#settings-content">
+                            <i class="fas fa-cog me-2"></i> Settings
+                        </a>
+                    </p>
+                </div>
+            </nav>
+
+
+
+            <!-- Right Content -->
+            <div class="col-lg-9">
+                <!-- Dashboard Content -->
+                <div id="dashboard-content" class="content collapse show">
+                    <h2>Dashboard</h2>
+                    <p>This is the Dashboard content.</p>
+                </div>
+                
+                <!-- Courses Content -->
+<div id="courses-content" class="content collapse">
+    <div class="container content" id="courses-content">
+        <h2>Courses</h2>
+
+        <div class="card mb-3 course-card">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="img/course-1.jpg" alt="Course 1" class="img-fluid course-img">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Course Title 1</h5>
+                        <p class="card-text">Description: This is the course description. Instructor: John Doe, Length: 8 weeks, Enrolled Students: 50</p>
+                        <div class="dropdown">
+                            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Manage Course
+                            </button>
+                            <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenu1">
+                                <button type="button" class="btn btn-success text-white" data-bs-toggle="modal" data-bs-target="#addModal" data-bs-whatever="Add new Course">Add new Course</button>
+                                <button type="button" class="btn btn-primary text-white" data-bs-toggle="modal" data-bs-target="#editModal" data-bs-whatever="Edit this course">Edit this Course</button>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete the course</button>
+
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="card mb-3 course-card">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="img/course-2.jpg" alt="Course 2" class="img-fluid course-img">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Course Title 2</h5>
+                        <p class="card-text">Description: This is the course description. Instructor: Jane Smith, Length: 10 weeks, Enrolled Students: 65</p>
+                        <div class="dropdown">
+                            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Manage Course
+                            </button>
+                            <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenu1">
+                                <button type="button" class="btn btn-success text-white" data-bs-toggle="modal" data-bs-target="#addModal" data-bs-whatever="Add new Course">Add new Course</button>
+                                <button type="button" class="btn btn-primary text-white" data-bs-toggle="modal" data-bs-target="#editModal" data-bs-whatever="Edit this course">Edit this Course</button>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete the course</button>
+
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<!-- Modal for Adding New Course -->
+<div class="modal fade" id="addCourseModal" tabindex="-1" aria-labelledby="addCourseModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addCourseModalLabel">Add New Course</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Add your form elements here (e.g., input fields for title, description, instructors, file upload, etc.) -->
+                <form>
+                    <div class="mb-3">
+                        <label for="courseTitle" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="courseTitle" placeholder="Enter course title">
+                    </div>
+                    <div class="mb-3">
+                        <label for="courseDescription" class="form-label">Description</label>
+                        <textarea class="form-control" id="courseDescription" rows="3" placeholder="Enter course description"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="instructors" class="form-label">Instructors</label>
+                        <input type="text" class="form-control" id="instructors" placeholder="Enter instructor information">
+                    </div>
+                    <div class="mb-3">
+                        <label for="courseFile" class="form-label">Upload File (PDF, PPT, Video)</label>
+                        <input type="file" class="form-control" id="courseFile">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Add Course</button>
+            </div>
+        </div>
+    </div>
+</div>
+                
+                <!-- Students Content -->
+                <div id="students-content" class="content collapse">
+                    <h2>Students</h2>
+                    <p>This is the Students content.</p>
+                </div>
+                
+                <!-- Instructors Content -->
+                <div id="instructors-content" class="content collapse">
+                    <h2>Instructors</h2>
+                    <p>This is the Instructors content.</p>
+                </div>
+                
+                <!-- Settings Content -->
+                <div id="settings-content" class="content collapse">
+                    <h2>Settings</h2>
+                    <p>This is the Settings content.</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+
+
+    <!-- Add course -->
+        <!-- Modal for Adding New Course -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addModalLabel">Add New Course</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="courseTitle" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="courseTitle" placeholder="Enter course title">
+                    </div>
+                    <div class="mb-3">
+                        <label for="courseDescription" class="form-label">Description</label>
+                        <textarea class="form-control" id="courseDescription" rows="3" placeholder="Enter course description"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="instructors" class="form-label">Instructors</label>
+                        <input type="text" class="form-control" id="instructors" placeholder="Enter instructor information">
+                    </div>
+                    <div class="mb-3">
+                        <label for="courseFile" class="form-label">Upload File (PDF, PPT, Video)</label>
+                        <input type="file" class="form-control" id="courseFile">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success">Add Course</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+   <!-- Button Delete course -->
+   <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">This is course will be deleted permanently. Confirm?</h5>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">No</button>
+          <button type="button" class="btn btn-danger">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--End Delete button modal-->
+  
+
+  <!-- Edit Course Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModal">Edit Course</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="editCourseTitle" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="editCourseTitle" placeholder="Enter course title">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editCourseDescription" class="form-label">Description</label>
+                        <textarea class="form-control" id="editCourseDescription" rows="3" placeholder="Enter course description"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editInstructors" class="form-label">Instructors</label>
+                        <input type="text" class="form-control" id="editInstructors" placeholder="Enter instructor information">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editCourseFile" class="form-label">Upload File (PDF, PPT, Video)</label>
+                        <input type="file" class="form-control" id="editCourseFile">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="main-course.js"></script>
+</body>
+</html>
